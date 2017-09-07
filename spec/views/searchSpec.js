@@ -6,11 +6,11 @@ describe ('SearchView', function() {
     sinon.spy(collection, 'search');
 
     view = new SearchView({ collection: collection });
-    view.template = _.template('<input type="text"/><button></button>');
+    view.template = _.template('<input type="text" class="form-control"/><button></button>');
     view.render();  // re-render with test template
   });
 
-  xdescribe('when rendering live data from YouTube', function() {
+  describe('when rendering live data from YouTube', function() {
 
     it('should initiate a search with input box value when button is clicked', function() {
       view.$('input').val('something');

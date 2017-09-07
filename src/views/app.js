@@ -7,6 +7,7 @@ var AppView = Backbone.View.extend({
     this.videos.search('overwatch');
     // this.videos.selected = this.videos.first();
     this.render();
+
   },
 
   render: function() {

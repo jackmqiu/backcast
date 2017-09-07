@@ -3,7 +3,7 @@ var VideoPlayerView = Backbone.View.extend({
   el: '.player',
 
   initialize: function() {
-    this.collection.on('all', this.render, this);
+    this.collection.on('select', this.render, this);
   },
 
 
@@ -14,6 +14,11 @@ var VideoPlayerView = Backbone.View.extend({
       return this;
     }
     this.$el.html(this.template(this.collection.selected));
+
+    if ($('#autoplay').prop('checked') === true) {
+      this.$el.find('iframe').attr('src', 'https://www.youtube.com/embed/' + this.collection.selected.id + '?autoplay=1');
+    }
+
     return this;
   },
 
