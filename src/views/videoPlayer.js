@@ -8,7 +8,8 @@ var VideoPlayerView = Backbone.View.extend({
 
 
   render: function() {
-    this.$el.html(this.template());
+    // console.log(this.collection.selected);
+    this.$el.html(this.template(this.collection.selected));
     return this;
   },
 

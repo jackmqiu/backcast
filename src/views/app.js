@@ -4,7 +4,7 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     this.videos = new Videos(window.exampleVideoData);
-    // console.log(window.exampleVideoData);
+    this.videos.selected = this.videos.first();
     this.render();
   },
 
