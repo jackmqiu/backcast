@@ -18,7 +18,9 @@ var AppView = Backbone.View.extend({
       collection: this.videos
     });
     this.$el.append(videoList.render());
-    var searchBar = new SearchView();
+    var searchBar = new SearchView({
+      collection: this.videos
+    });
     this.$el.append(searchBar.render());
     return this;
   },
