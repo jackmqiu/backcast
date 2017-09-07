@@ -6,8 +6,10 @@ var Video = Backbone.Model.extend({
   },
 
   select: function() {
-    console.log('Video\'s parent collection:', this.collection);
-    this.collection.selected = this;
+    // console.log('Video\'s parent collection:', this.collection);
+    if (this.collection !== undefined) {
+      this.collection.selected = this;
+    }
     this.trigger('select', this);
   }
 
