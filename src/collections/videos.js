@@ -1,5 +1,6 @@
 var Videos = Backbone.Collection.extend({
   initialize: function() {
+    // this.search('overwatch');
     this.selected = null;
   },
 
@@ -18,6 +19,7 @@ var Videos = Backbone.Collection.extend({
       url: 'https://www.googleapis.com/youtube/v3/search',
       success: function(data){
         that.reset(data.items);
+        that.selected = that.first().select();
         console.log('data from youtube: ', data);
       }
     });

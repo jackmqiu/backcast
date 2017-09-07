@@ -4,7 +4,8 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     this.videos = new Videos(window.exampleVideoData);
-    this.videos.selected = this.videos.first();
+    this.videos.search('overwatch');
+    // this.videos.selected = this.videos.first();
     this.render();
   },
 
